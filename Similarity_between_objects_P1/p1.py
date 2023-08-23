@@ -39,3 +39,4 @@ for i in range(len(df)):
 similarity.sort(key=lambda x: x[2], reverse=False)
 #print in tabular form
 print(pd.DataFrame(similarity[:10], columns=['animal1', 'animal2', 'score']))
+
