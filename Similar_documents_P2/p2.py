@@ -77,4 +77,4 @@ for i in range(len(df.columns)):
 similarity.sort(key=lambda x: x[3], reverse=True)
 print('\n')
 #print in tabular form
-print(pd.DataFrame(similarity[:10], columns=['Da', 'Db', 'EU_DIS','CS_DIS']))
+print(pd.DataFrame(similarity[:10], columns=['D-a', 'D-b', 'EUC_Distance','CS_Distance']))
