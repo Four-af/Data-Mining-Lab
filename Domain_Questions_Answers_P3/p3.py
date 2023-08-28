@@ -27,31 +27,31 @@ def findFrequencyOfWordInDocument(filePath):
     MAP={};
     for line in file:
         for word in line.split(" "):
-            word=removeChar(word,'\n');
-            word=removeChar(word,',');
-            word=removeChar(word,'.');
-            word=removeChar(word,':');
-            word=removeChar(word,'(');
-            word=removeChar(word,')');
-            word=removeChar(word,'?');
-            word=word.lower();
+            word=removeChar(word,'\n')
+            word=removeChar(word,',')
+            word=removeChar(word,'.')
+            word=removeChar(word,':')
+            word=removeChar(word,'(')
+            word=removeChar(word,')')
+            word=removeChar(word,'?')
+            word=word.lower()
 
-            if(len(word)==0):continue;
-            if(word in STOP_WORDS):continue;
+            if(len(word)==0):continue
+            if(word in STOP_WORDS):continue
 
             if MAP.get(word)!=None:
                 MAP[word]+=1
             else:
-                MAP[word]=1;
-    print(MAP);
+                MAP[word]=1
+    print(MAP)
     return MAP
 
 for i in range(0,len(QUESTIONS_PATH)):
     QUESTIONS_WORD_FREQ.append(findFrequencyOfWordInDocument(QUESTIONS_PATH[i]))
 
 for i in range(0,len(ANSWERS_PATH)):
-    file=open(ANSWERS_PATH[i],'r');
-    ANSWERS_LIST.append(file.read());
+    file=open(ANSWERS_PATH[i],'r')
+    ANSWERS_LIST.append(file.read())
 
 print("\n#-------QUESTIONS_WORD_FREQ------#\n")
 for i in range(0,len(QUESTIONS_WORD_FREQ)):
@@ -90,7 +90,7 @@ for ques in range(0,len(QUESTIONS_WORD_FREQ)):
             union[word][1]=QUESTIONS_WORD_FREQ[ques][word]
     df=pd.DataFrame(union)
     print(df)
-    cosine_similarity=findCosineSimilarity(union);
+    cosine_similarity=findCosineSimilarity(union)
     print("Cosine Similarity :",cosine_similarity,"\n\n")
     if max_cosine_similarity<cosine_similarity :
         max_cosine_similarity=cosine_similarity
