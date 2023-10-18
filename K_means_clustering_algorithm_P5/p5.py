@@ -1,5 +1,6 @@
 import random
 
+# K = int(input(print("Enter the value of K: ")))
 # We will use this list to store the dataset
 DATASET = []
 
@@ -36,7 +37,7 @@ print(
 print(points)
 
 # Find the Euclidean Distance and assign to the data point to the nearest cluster
-
+# changed to manhattan
 
 def assignClusters(points):
     new_cluster = {}
@@ -48,9 +49,9 @@ def assignClusters(points):
             # print(points[k_index])
             # for f_index in range(F):
             # print(points, k_index, f_index)
-            distance += (DATASET[d_indx][0] - points[k_index][0]) ** 2 + (
+            distance += (DATASET[d_indx][0] - points[k_index][0]) + (
                 DATASET[d_indx][1] - points[k_index][1]
-            ) ** 2
+            )
 
             if distance < min_distance:
                 min_distance = distance
