@@ -8,3 +8,6 @@
 - `P4:` Apriori Algorithm
 - `P5:` K-means Clustering Algorithm
 - `P6:` Decision Tree
+- `P7:` KNN Classification
+- `P8:` AGNES: Agglomerative Hierarchical Clustering
+- `P9:` DIANA: Divisive Hierarchical Clustering
